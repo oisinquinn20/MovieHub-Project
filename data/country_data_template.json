@@ -70,9 +70,9 @@
         "lon": null
     },
     "United States": {
-        "Continent": "North America",
-        "lat": 48.1667,
-        "lon": 100.1667
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
     },
     "West Germany": {
         "Continent": "TODO",
