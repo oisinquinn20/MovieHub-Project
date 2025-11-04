@@ -1,4 +1,5 @@
 import json
+import uuid
 from flask import Flask, jsonify, make_response, request
 from movie_validators import (
     validate_movie_fields,
@@ -17,7 +18,7 @@ with open("data/imdb_top_100_movies_with_location.json", "r", encoding="utf-8") 
 
 
 @app.route("/api/v1.0/movies", methods=["GET"])
-def get_all_movies():
+def show_all_movies():
     return make_response(jsonify(movies), 200)
 
 @app.route("/api/v1.0/movies/<string:title>/review", methods=["POST"])
@@ -45,6 +46,9 @@ def add_review(title):
 def create_movie():
     new_movie = request.get_json()
 
+    if "id" not in new_movie:
+        new_movie["id"] = str(uuid.uuid4())
+
     error = validate_movie_fields(new_movie)
     if error:
         return make_response(jsonify({"error": error}), 400)
@@ -64,7 +68,7 @@ def create_movie():
         "movie": new_movie
     }), 201)
 
-@app.route("/api/v1.0/movies/<string:title>", methods=["DELETE"])
+@app.route("/api/v1.0/movies/<string:id>", methods=["DELETE"])
 def delete_movie(title):
     global movies
 

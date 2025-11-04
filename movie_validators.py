@@ -32,3 +32,7 @@ def parse_countries(country_str):
 def save_movies_to_file(movies, path="data/imdb_top_100_movies_with_location.json"):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(movies, f, ensure_ascii=False, indent=4)
+
+# Get movie by unique id
+def find_movie_by_id(movie_id, movies):
+    return next((m for m in movies if m["id"] == movie_id), None)
