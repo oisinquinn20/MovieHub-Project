@@ -1,0 +1,82 @@
+{
+    "Australia": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    },
+    "Brazil": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    },
+    "France": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    },
+    "Germany": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    },
+    "Hong Kong": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    },
+    "Italy": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    },
+    "Japan": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    },
+    "Mexico": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    },
+    "New Zealand": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    },
+    "Poland": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    },
+    "South Korea": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    },
+    "Spain": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    },
+    "Sweden": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    },
+    "United Kingdom": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    },
+    "United States": {
+        "Continent": "North America",
+        "lat": 48.1667,
+        "lon": 100.1667
+    },
+    "West Germany": {
+        "Continent": "TODO",
+        "lat": null,
+        "lon": null
+    }
+}
