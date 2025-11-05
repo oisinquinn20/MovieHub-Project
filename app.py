@@ -19,7 +19,40 @@ with open("data/imdb_top_100_movies_with_location.json", "r", encoding="utf-8") 
 
 @app.route("/api/v1.0/movies", methods=["GET"])
 def show_all_movies():
-    return make_response(jsonify(movies), 200)
+    page_num = 1
+    page_size = 10
+
+    if request.args.get("pn"):
+        page_num = int(request.args.get("pn"))
+
+    if request.args.get("ps"):
+        page_size = int(request.args.get("ps"))
+
+    # Calculate start
+    page_start = page_size * (page_num - 1)
+
+    movies_list = movies  
+
+    # Slice the movies to return only current page
+    page_movies = movies_list[page_start : page_start + page_size]
+
+    # Error handling
+
+    # If page doesnt exist return 404 
+    if not page_movies:
+        return make_response(jsonify({
+            "error": "Invalid page number",
+            "total_records": len(movies),
+            "page_size": page_size
+        }), 404)
+
+    # Return 200 if page is available
+    return make_response(jsonify({
+        "page_number": page_num,
+        "page_size": page_size,
+        "total_records": len(movies),
+        "movies": page_movies
+    }), 200)
 
 @app.route("/api/v1.0/movies/<string:title>/review", methods=["POST"])
 def add_review(title):
